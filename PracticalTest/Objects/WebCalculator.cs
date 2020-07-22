@@ -1,4 +1,5 @@
-﻿using PracticalTest.Interfaces;
+﻿using System.Security.Authentication;
+using PracticalTest.Interfaces;
 using OpenQA.Selenium;
 using PracticalTest.Common;
 
@@ -13,7 +14,7 @@ namespace PracticalTest.Objects
         private readonly By _operatorList = By.Id("operator");
         private readonly By _iFrame = By.TagName("iframe");
         private readonly By _calculateButton = By.Id("calculate");
-        private string _result = null;
+        private string _result;
 
         public WebCalculator(IWebDriver driver) : base(driver)
         {
@@ -60,10 +61,19 @@ namespace PracticalTest.Objects
         {
             Driver.SwitchTo().DefaultContent();
 
+            //Get the non-empty value from result element when the 1st time calculator is used
+            //Otherwise, get the new value that is different from previous result
             _result = _result == null 
                 ? GetValueFromElement(_resultTextBox)
                 : GetDifferentValueFromElement(_resultTextBox, _result);
-            return int.Parse(_result);
+
+            var parsedSucceed = int.TryParse(_result, out var resultAsInt);
+
+            //Calculator needs to return an integer, otherwise we have to stop our test and report an error
+            return parsedSucceed
+                ? resultAsInt
+                : throw new AuthenticationException("Result value returned from Web is {_result}" +
+                                                    "which is not an integer as expected.");
         }
     }
 }

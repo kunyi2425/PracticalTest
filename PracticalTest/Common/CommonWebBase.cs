@@ -74,7 +74,6 @@ namespace PracticalTest.Common
             }
             else
             {
-                var test = FindElement(@by).GetAttribute("value");
                 wait.Until(d => FindElement(@by).GetAttribute("value") != changeFromValue);
             }
         }
