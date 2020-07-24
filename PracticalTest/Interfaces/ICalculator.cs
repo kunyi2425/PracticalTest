@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace PracticalTest.Interfaces
+﻿namespace PracticalTest.Interfaces
 {
     public interface ICalculator
     {
