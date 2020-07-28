@@ -23,6 +23,7 @@ namespace PracticalTest.Tests.Web
 
         [TestMethod]
         [DataRow(999, 999, '+', 999 + 999)]
+        [DataRow(999, 999, '-', 0)]
         [DataRow(999, 7, '*', 999 * 7)]
         [DataRow(999, 34, '/', 999 / 34)]
         [DataRow(0, -999, '*', 0)]
