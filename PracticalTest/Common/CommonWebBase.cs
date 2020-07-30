@@ -66,7 +66,7 @@ namespace PracticalTest.Common
 
         protected void WaitValueIsPopulatedOrChanged(By by, string changeFromValue = null)
         {
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(60));
 
             if (changeFromValue == null)
             {
