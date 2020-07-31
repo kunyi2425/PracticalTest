@@ -7,6 +7,7 @@ using PracticalTest.Objects;
 namespace PracticalTest.Tests.Api
 {
     [TestClass]
+    [TestCategory("CICD"), TestCategory("API"), TestCategory("SMOKE")]
     public class ApiTestRestApiTest : TestBase
     {
         private ApiCalculator _calculator;
