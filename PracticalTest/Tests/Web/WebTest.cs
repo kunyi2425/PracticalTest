@@ -8,7 +8,7 @@ using PracticalTest.Objects;
 namespace PracticalTest.Tests.Web
 {
     [TestClass]
-    [TestCategory("CICD"), TestCategory("WEB")]
+    [TestCategory("WEB")]
     public class WebTest : TestBase
     {
         private IWebDriver _driver;

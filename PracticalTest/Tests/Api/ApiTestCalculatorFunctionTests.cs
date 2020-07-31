@@ -6,7 +6,7 @@ using PracticalTest.Objects;
 namespace PracticalTest.Tests.Api
 {
     [TestClass]
-    [TestCategory("CICD"), TestCategory("API")]
+    [TestCategory("API")]
     public class ApiTestCalculatorFunctionTests : TestBase
     {
         private ICalculator _calculator;
