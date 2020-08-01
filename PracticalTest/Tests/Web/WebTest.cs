@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using PracticalTest.Common;
 using PracticalTest.Interfaces;
 using PracticalTest.Objects;
@@ -17,7 +16,7 @@ namespace PracticalTest.Tests.Web
         [TestInitialize]
         public void Setup()
         {   
-            _driver = new ChromeDriver();
+            _driver = BuiDriver();
             _driver.Url = WebUrl;
             _calculator = new WebCalculator(_driver);
         }

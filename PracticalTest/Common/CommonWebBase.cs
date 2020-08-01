@@ -7,8 +7,7 @@ namespace PracticalTest.Common
     public abstract class CommonWebBase
     {
         protected IWebDriver Driver;
-
-
+        
         protected CommonWebBase(IWebDriver driver)
         {
             Driver = driver;
