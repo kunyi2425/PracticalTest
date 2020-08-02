@@ -14,3 +14,6 @@ https://dev.azure.com/kunyi2425/PracticalTest
 
 # Refactored version with common lib at:
 https://github.com/kunyi2425/PracticalTestsRefactored
+
+# Test Common Project at:
+https://github.com/kunyi2425/TestCommon
