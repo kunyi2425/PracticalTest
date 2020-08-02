@@ -7,7 +7,7 @@ namespace PracticalTest.Common
 {
     public static class DriverInitializer
     {
-        public static IWebDriver StartDriver(string driverType)
+        public static IWebDriver StartDriver(string driverType, string baseUrl)
         {
             if (string.IsNullOrEmpty(driverType))
                 throw new AutomationException("Driver type is not provided. Please check test setting file.");
@@ -19,18 +19,14 @@ namespace PracticalTest.Common
                 case "IE":
                     var options = new InternetExplorerOptions();
                     options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-                    options.EnableNativeEvents = false;
-                    options.PageLoadStrategy = PageLoadStrategy.Eager;
-                    options.RequireWindowFocus = true;
-                    options.EnablePersistentHover = true;
                     options.IgnoreZoomLevel = true;
-                    options.EnsureCleanSession = true;
-                    options.UnhandledPromptBehavior = UnhandledPromptBehavior.Accept;
-                    return new InternetExplorerDriver(options);
+                    options.InitialBrowserUrl = baseUrl;
+                    var driver = new InternetExplorerDriver(options);
+                    return driver;
                 case "FIREFOX":
                     return new FirefoxDriver();
                 default:
-                    throw new AutomationException($"Failed initilizing driver. " +
+                    throw new AutomationException($"Failed initializing driver. " +
                                                   $"Given driver type {driverType} is not supported.");
 
             }

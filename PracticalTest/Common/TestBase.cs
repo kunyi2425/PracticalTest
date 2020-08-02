@@ -27,7 +27,7 @@ namespace PracticalTest.Common
 
         public IWebDriver BuiDriver()
         {
-            return DriverInitializer.StartDriver(_driverType);
+            return DriverInitializer.StartDriver(_driverType, WebUrl);
         }
     }
 }
