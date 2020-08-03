@@ -18,7 +18,7 @@ https://github.com/kunyi2425/PracticalTestsRefactored
 # Test Common Project at:
 https://github.com/kunyi2425/TestCommon
 
-#Some findings:
+# Some findings:
 1. Web calculator: -99 - 99 = 0 (expected to be -198)
 2. Web calculator: 999 * 999 = 99800 (expected to be 998001, length of textbox needs to be set to 6 instead of 5)
 3. Web calculator: 1 / 0 = 0 (expected to be error)
@@ -26,6 +26,6 @@ https://github.com/kunyi2425/TestCommon
 5. Api calculator: returns 500 when divide a number by 0 (expected a customized error)
 6. Api calculator: returns 500 when inputs are not integer (expected a customized error)
 
-#None functional:
+# None functional:
 1. Web calculator: 1st calculation takes too long when calculator has not been used for a while.
 2. Web calculator: Needs to update IE security settings to enable content in iframe.
