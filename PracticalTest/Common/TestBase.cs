@@ -3,6 +3,7 @@ using System.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NLog;
 using OpenQA.Selenium;
+using PracticalTest.Common.Utils;
 
 namespace PracticalTest.Common
 {

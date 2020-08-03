@@ -83,7 +83,8 @@
     <Compile Include="Common\AutomationException.cs" />
     <Compile Include="Common\CommonApiBase.cs" />
     <Compile Include="Common\CommonWebBase.cs" />
-    <Compile Include="Common\DriverInitializer.cs" />
+    <Compile Include="Common\Utils\Calculator.cs" />
+    <Compile Include="Common\Utils\DriverInitializer.cs" />
     <Compile Include="Common\TestBase.cs" />
     <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Models\ApiCalculatorRequest.cs" />

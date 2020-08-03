@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using PracticalTest.Common;
 using PracticalTest.Interfaces;
@@ -30,7 +31,8 @@ namespace PracticalTest.Tests.Web
         public void WebTest_PositiveTests(int leftNumber, int rightNumber, char operatorUsed, int expectedResult)
         {
             var actualResult = _calculator.Calculate(leftNumber, rightNumber, operatorUsed);
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult, 
+                $"Web calculator returned unexpected result with {leftNumber} {operatorUsed} {rightNumber} = {actualResult}");
         }
 
         [TestMethod]
@@ -42,7 +44,8 @@ namespace PracticalTest.Tests.Web
         {
             var actualResult = _calculator.Calculate(leftNumber, rightNumber, operatorUsed);
             //Assert for not equal for now - can be raised as bug
-            Assert.AreNotEqual(expectedResult, actualResult);
+            Assert.AreNotEqual(expectedResult, actualResult
+            , $"Web calculator returned unexpected result with {leftNumber} {operatorUsed} {rightNumber} = {actualResult}");
         }
 
         [TestMethod]
