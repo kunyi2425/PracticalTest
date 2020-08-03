@@ -6,9 +6,6 @@ namespace PracticalTest.Common.Utils
     {
         public static int Caculate(int left, int right, char operatorUsed)
         {
-            if(right == 0 && operatorUsed == '/')
-                throw new AutomationException("Divided by 0 is a invalid calculation.");
-
             switch (operatorUsed)
             {
                 case '+':
@@ -18,9 +15,11 @@ namespace PracticalTest.Common.Utils
                 case '*':
                     return left * right;
                 case '/':
+                    if(right == 0)
+                        throw new AutomationException("Divided by 0 on calculator is not allowed.");
                     return left / right;
                 default:
-                    throw new Exception($"{operatorUsed} is not a valid operator type.");
+                    throw new Exception($"{operatorUsed} is not a valid operator type on calculator.");
             }
         }
     }
