@@ -26,7 +26,7 @@ namespace PracticalTest.Common
             Logger.Info(DateTime.Now + $" - Test started on web ({WebUrl}) and api ({ApiUrl}). Driver is set to {_driverType}.");
         }
 
-        public IWebDriver BuiDriver()
+        public IWebDriver BuildDriver()
         {
             return DriverInitializer.StartDriver(_driverType, WebUrl);
         }

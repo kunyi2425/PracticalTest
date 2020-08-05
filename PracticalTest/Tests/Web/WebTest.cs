@@ -17,7 +17,7 @@ namespace PracticalTest.Tests.Web
         [TestInitialize]
         public void Setup()
         {   
-            _driver = BuiDriver();
+            _driver = BuildDriver();
             _driver.Url = WebUrl;
             _calculator = new WebCalculator(_driver);
         }
